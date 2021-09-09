@@ -1,0 +1,264 @@
+@charset "utf-8";
+
+/* ============ Desktop view ============ */
+
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: none;
+    }
+    .navbar .nav-item:hover .nav-link {
+        opacity: 80%;
+    }
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+    .navbar .nav-item .dropdown-menu {
+        margin-top: 0;
+    }
+    #breakfast_img {
+        background-image: url(../images/breakfast_1.png);
+        min-height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #coffee_img {
+        background-image: url(../images/coffee_1.png);
+        min-height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #cakes_img {
+        background-image: url(../images/cakes_1.png);
+        min-height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #product_img {
+        background-image: url(../images/products_1.png);
+        min-height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .card-img-top {
+        width: 100%;
+    }
+    .product-detail {
+        text-align: left;
+        width: 400px;
+        margin: 0 auto;
+    }
+    .payment {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        overflow: hidden;
+    }
+    .payment img {
+        margin-right: 20px;
+        float: left;
+        width: 80px;
+        height: 80px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: 1rem 0;
+    }
+}
+
+
+/* ============ Tablet view ============ */
+
+@media all and (min-width: 768px) {
+    #breakfast_img {
+        background-image: url(../images/breakfast_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #coffee_img {
+        background-image: url(../images/coffee_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #cakes_img {
+        background-image: url(../images/cakes_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #product_img {
+        background-image: url(../images/products_1.png);
+        min-height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .product-detail {
+        text-align: left;
+        width: 400px;
+        margin: 0 auto;
+    }
+    .payment {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        overflow: hidden;
+    }
+    .payment img {
+        margin-right: 20px;
+        float: left;
+        width: 80px;
+        height: 80px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: 1rem 0;
+    }
+}
+
+
+/* ============ Mobile view ============ */
+
+@media all and (min-width: 576px) {
+    #breakfast_img {
+        background-image: url(../images/breakfast_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #coffee_img {
+        background-image: url(../images/coffee_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #cakes_img {
+        background-image: url(../images/cakes_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #product_img {
+        background-image: url(../images/products_detail_4.png);
+        height: 560px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .product-detail {
+        text-align: center;
+        width: 400px;
+        margin: 0 auto;
+    }
+    .form {
+        text-align: center;
+        padding: 10%;
+    }
+    .payment {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        overflow: hidden;
+    }
+    .payment img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+
+/* ============ Extra small view ============ */
+
+@media all and (max-width: 575px) {
+    #breakfast_img {
+        background-image: url(../images/breakfast_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #coffee_img {
+        background-image: url(../images/coffee_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #cakes_img {
+        background-image: url(../images/cakes_2.png);
+        width: 100%;
+        height: 460px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #product_img {
+        background-image: url(../images/products_detail_4.png);
+        height: 560px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .product-detail {
+        text-align: center;
+        width: 320px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .form {
+        text-align: center;
+        padding: 10%;
+    }
+    .payment {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        overflow: hidden;
+    }
+    .payment img {
+        width: 200px;
+        height: auto;
+    }
+    .navbar-nav {
+        height: 100% !important;
+        padding: 20px;
+        font-size: 2.2rem;
+        font-style: light;
+    }
+    .logo {
+        font-size: 1.75rem;
+    }
+}

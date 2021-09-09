@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" media="screen" />
+    <script src="./jquery/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <!-- IOS Support -->
+    <link rel="apple-touch-icon" href="/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+    <title>Casual Conversation - Home</title>
+</head>
+
+<body>
+    <div id="topnav">
+        <form class="p-5">
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control bg-transparent text-white" placeholder="Search">
+            </div>
+        </form>
+    </div>
+
+    <div id="sidebar">
+        <div class="cart-container">
+            <div class="hide-sidebar">
+                <button id="cartClosed"></button>
+            </div>
+            <h2 class="text-white">Your cart</h2>
+            </hr>
+            <div class="cart-content">
+                <p class="text-secondary alignLeft">Chocolate cake<br>12cm<br>Qty:1</p>
+                <h4 class="text-white alignRight">$20.90</h4>
+            </div>
+            <div class="fixed">
+                <hr class="line-primary">
+                </hr>
+                <div class="cart-content">
+                    <p class="text-secondary alignLeft">Subtotal (Tax Incl.)</p>
+                    <h4 class="text-white alignRight mb-5">$20.90</h4>
+                </div>
+                <a href="payment.html"><button class="btn-wide">Checkout</button></a>
+            </div>
+        </div>
+        <div id="overlay"></div>
+    </div>
+
+
+    <nav class="navbar navbar-dark bg-black navbar-expand-md text-dark sticky-top">
+        <a class="navbar-brand m-3 mr-auto" href="index.html">
+            <h2 class="logo pl-lg-4">Casual Conversation</h2>
+        </a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav ml-md-auto ml-sm-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link mr-lg-4 text-white" href="#">About</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Our story</a>
+                        <a class="dropdown-item" href="locations.html">Locations</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-white" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-white" id="cartbtn" href="#">Cart</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-white" id="searchbtn" href="#">Search</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-white" href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section class="main">
+        <div class="container-fluid p-0">
+            <div class="bg">
+                <div class="col-12 pl-lg-5">
+                    <div class="row m-1 pt-6">
+                        <div class="card-body">
+                            <h2 class="text-white">Great Coffee<br> Great Conversation</h2>
+                            <p class="text-white">The favorite social destination and perfect place to relax for both locals and travellers.</p>
+                            <a href="shop.html"><button class="btn">Order now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-0 mt-2 mb-2">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+                    <div class="card text-white m-1">
+                        <div id="breakfast_img"></div>
+                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+                            <h3 class="card-title text-center">Cakes & Desserts</h3>
+                            <p class="card-text text-center">Get your sweet tooth cravings fixed today here</p>
+                            <a href="shop.html"><button class="btn">Order now</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+                    <div class="card text-white m-1">
+                        <div id="coffee_img"></div>
+                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+                            <h3 class="card-title text-center">Coffee & Drinks</h3>
+                            <p class="card-text text-center">Start your day right with a good cup of coffee</p>
+                            <a href="shop.html"><button class="btn">Order now</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+                    <div class="card text-white m-1">
+                        <div id="cakes_img"></div>
+                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+                            <h3 class="card-title text-center">All-Day Breakfast</h3>
+                            <p class="card-text text-center">All happiness begin with a good breakfast</p>
+                            <a href="shop.html"><button class="btn">Order now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-left text-lg-start" style="background-color: #303030;">
+        <div class="container-fluid p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-1 order-md-2 order-sm-2 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">About</h6>
+                    <hr class="line-primary">
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Our story</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Locations</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Privacy policy</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Terms and conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-2 order-md-3 order-sm-3 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">Support</h6>
+                    <hr class="line-primary">
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Contact us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">FAQs</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Delivery and return</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Track order</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-3 order-md-4 order-sm-4 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">Social media</h6>
+                    <hr class="line-primary"></hr>
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Instagram</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Twitter</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12 col-sm-12 order-lg-4 order-md-1 order-sm-1 pt-4 pb-4">
+                    <div class="newsletter">
+                        <input type="text" placeholder="Subscribe news here." name="newsletter">
+                        <div class="newsletter-icon">
+                            <button id="subscribeNews"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBDjYAHQoilGDQOiSay9GVcs7dq0czgUZQ",
+        authDomain: "casual-conversation-97d04.firebaseapp.com",
+        projectId: "casual-conversation-97d04",
+        storageBucket: "casual-conversation-97d04.appspot.com",
+        messagingSenderId: "320349514613",
+        appId: "1:320349514613:web:1874082d1579f4be25c13c",
+        measurementId: "G-SQGVVQT1RD"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const db = firebase.firestore()
+    db.settings({
+        timestampInSnapshots: true
+    });
+</script>
+
+<script>
+    var searchButton = document.getElementById('searchbtn');
+    // show topnav when user clicks on searchbtn button //
+    searchButton.onclick = function() {
+        var div = document.getElementById('topnav');
+        if (div.style.display !== 'none') { // checks if it is hidden //
+            div.style.display = 'none'; // hides if it is not //
+        } else {
+            div.style.display = 'block'; // shows if it is hidden //
+        }
+    };
+
+
+    var cartButton = document.getElementById('cartbtn');
+    // show sidebar when user clicks on cartbtn button //
+    cartButton.onclick = function() {
+        var div = document.getElementById('sidebar');
+        if (div.style.display !== 'none') {
+            div.style.display = 'none';
+        } else {
+            div.style.display = 'flex';
+        }
+    };
+
+
+    var cartClosed = document.getElementById('cartClosed');
+    // hide sidebar when user clicks on cartClosed button //
+    cartClosed.onclick = function() {
+        var div = document.getElementById('sidebar');
+        div.style.display = 'none';
+    };
+
+
+    var confirmSubscribe = document.getElementById('subscribeNews');
+    // prompt confirm window to thank user after he or she clicks on subscribeNews button //
+    confirmSubscribe.onclick = function() {
+        var div = document.getElementById('newsletter');
+        alert("Thank you for your subscription! ");
+    };
+</script>
+
+</html>

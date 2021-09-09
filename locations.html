@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" media="screen" />
+    <script src="./jquery/jquery.min.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLAJp9RQgQ07oCAdGAWpUOFfhap-TB9r8&callback=initMap"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <!-- IOS Support -->
+    <link rel="apple-touch-icon" href="/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+    <title>Casual Conversation - Locations</title>
+</head>
+
+<body>
+    <div id="topnav">
+        <form class="p-5">
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control bg-transparent text-white" placeholder="Search">
+            </div>
+        </form>
+    </div>
+
+    <div id="sidebar">
+        <div class="cart-container">
+            <div class="hide-sidebar">
+                <button id="cartClosed"></button>
+            </div>
+            <h2 class="text-white">Your cart</h2>
+            </hr>
+            <div class="cart-content">
+                <p class="text-secondary alignLeft">Chocolate cake<br>12cm<br>Qty:1</p>
+                <h4 class="text-white alignRight">$20.90</h4>
+            </div>
+            <div class="fixed">
+                <hr class="line-primary">
+                </hr>
+                <div class="cart-content">
+                    <p class="text-secondary alignLeft">Subtotal (Tax Incl.)</p>
+                    <h4 class="text-white alignRight mb-5">$20.90</h4>
+                </div>
+                <a href="payment.html"><button class="btn-wide">Checkout</button></a>
+            </div>
+        </div>
+        <div id="overlay"></div>
+    </div>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md text-dark sticky-top">
+        <a class="navbar-brand m-3 mr-auto" href="index.html">
+            <h2 class="logo pl-lg-4">Casual Conversation</h2>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav ml-md-auto ml-sm-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link mr-lg-4 text-dark" href="#">About</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Our story</a>
+                        <a class="dropdown-item" href="locations.html">Locations</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" id="cartbtn" href="#">Cart</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" id="searchbtn" href="#">Search</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="main">
+        <div class="container-fluid p-0">
+            <div class="row mb-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 pl-5 pt-5 p-sm-3">
+                    <div id="map" style="width:100%; height: 600px"></div>
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-12 pl-5 pt-5">
+                    <h4 class="mb-3">Locations</h4>
+
+                    <div class="overflow-auto" style="max-height: 500px;">
+                        <div class="pb-3">
+                            <h6><a href="#">Great World City</a></h6>
+                            <p class="text-secondary">1 Kim Seng Promenade,<br>#01-155 Singapore 237994<br>Daily: 8.00am - 10.00pm</p>
+                            <hr class="line-primary" style="text-align: left; margin-left: 0; width: 90%;"></hr>
+                        </div>
+                        <div class="pb-3">
+                            <h6><a href="#">East Coast Park</a></h6>
+                            <p class="text-secondary">1110 East Coast Parkway,<br>01-05/06/07 Singapore 449880<br>Daily: 8.00am - 10.00pm</p>
+                            <hr class="line-primary" style="text-align: left; margin-left: 0; width: 90%;"></hr>
+                        </div>
+                        <div class="pb-3">
+                            <h6><a href="#">Ann Siang Hill Park</a></h6>
+                            <p class="text-secondary">45 Ann Siang Road,<br>#02-02 Singapore 069719<br>Daily: 8.00am - 10.00pm</p>
+                            <hr class="line-primary" style="text-align: left; margin-left: 0; width: 90%;"></hr>
+                        </div>
+                        <div class="pb-3">
+                            <h6><a href="#">Paragon</a></h6>
+                            <p class="text-secondary">290 Orchard Road,<br>#03-41/44 Singapore 238859<br>Daily: 8.00am - 10.00pm</p>
+                            <hr class="line-primary" style="text-align: left; margin-left: 0; width: 90%;"></hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-left text-lg-start" style="background-color: #303030;">
+        <div class="container-fluid p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-1 order-md-2 order-sm-2 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">About</h6>
+                    <hr class="line-primary">
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Our story</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Locations</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Privacy policy</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Terms and conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-2 order-md-3 order-sm-3 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">Support</h6>
+                    <hr class="line-primary">
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Contact us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">FAQs</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Delivery and return</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Track order</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-3 order-md-4 order-sm-4 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">Social media</h6>
+                    <hr class="line-primary"></hr>
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Instagram</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Twitter</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12 col-sm-12 order-lg-4 order-md-1 order-sm-1 pt-4 pb-4">
+                    <div class="newsletter">
+                        <input type="text" placeholder="Subscribe news here." name="newsletter">
+                        <div class="newsletter-icon">
+                            <button id="subscribeNews"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+</body>
+
+
+
+<script>
+    function initMap() {
+        var center = {
+            lat: 1.290270,
+            lng: 103.851959
+        };
+
+        var locations = [
+            ['Great World City', 1.293675218122871, 103.83195343718765, 1],
+            ['East Coast Park', 1.3012025157862173, 103.91285178524757, 2],
+            ['Ann Siang Hill', 1.281351208290972, 103.84578659715002, 3],
+            ['Paragon', 1.3041053744273325, 103.83564870508498, 4]
+        ];
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: center
+        });
+        var infowindow = new google.maps.InfoWindow({});
+        var marker, count;
+        for (count = 0; count < locations.length; count++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[count][1], locations[count][2]),
+                map: map,
+                title: locations[count][0]
+            });
+            google.maps.event.addListener(marker, 'click', (function(marker, count) {
+                return function() {
+                    infowindow.setContent(locations[count][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, count));
+        }
+    }
+</script>
+
+</html>

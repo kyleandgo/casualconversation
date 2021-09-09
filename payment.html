@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" media="screen" />
+    <script src="./jquery/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <!-- IOS Support -->
+    <link rel="apple-touch-icon" href="/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+    <title>Casual Conversation - Payment</title>
+</head>
+
+<body>
+    <div id="topnav">
+        <form class="p-5">
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control bg-transparent text-white" placeholder="Search">
+            </div>
+        </form>
+    </div>
+
+    <div id="sidebar">
+        <div class="cart-container">
+            <div class="hide-sidebar">
+                <button id="cartClosed"></button>
+            </div>
+            <h2 class="text-white">Your cart</h2>
+            </hr>
+            <div class="cart-content">
+                <p class="text-secondary alignLeft">Chocolate cake<br>12cm<br>Qty:1</p>
+                <h4 class="text-white alignRight">$20.90</h4>
+            </div>
+            <div class="fixed">
+                <hr class="line-primary">
+                </hr>
+                <div class="cart-content">
+                    <p class="text-secondary alignLeft">Subtotal (Tax Incl.)</p>
+                    <h4 class="text-white alignRight mb-5">$20.90</h4>
+                </div>
+                <a href="payment.html"><button class="btn-wide">Checkout</button></a>
+            </div>
+        </div>
+        <div id="overlay"></div>
+    </div>
+
+    <nav class="navbar navbar-light bg-white navbar-expand-md text-dark sticky-top">
+        <a class="navbar-brand m-3 mr-auto" href="index.html">
+            <h2 class="logo pl-lg-4">Casual Conversation</h2>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav ml-md-auto ml-sm-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link mr-lg-4 text-dark" href="#">About</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Our story</a>
+                        <a class="dropdown-item" href="locations.html">Locations</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" id="cartbtn" href="#">Cart</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" id="searchbtn" href="#">Search</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a class="nav-link text-dark" href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="main">
+        <div class="container p-0 mt-2">
+            <div class="row mt-0">
+                <div class="col-lg-6 col-md-6 col-sm-12 p-5 order-lg-1 order-md-1 order-sm-2">
+                    <form name="checkout-form" action="thankyou.html" onsubmit="return submitPayment()" required>
+                        <fieldset>
+                            <p class="text-primary">Name</p>
+                            <div>
+                                <input type="text" placeholder="Please enter" id="name" name="name">
+                                <div id="nameMessage" class="error">Please enter name</div>
+                            </div>
+
+                            <p class="text-primary">Email</p>
+                            <div>
+                                <input type="text" placeholder="Please enter" id="email" name="email" minlength="10">
+                                <div id="emailMessage" class="error">Please enter email address</div>
+                            </div>
+
+                            <p class="text-primary">Receive order</p>
+                            <div>
+                                <input id="radio-1" class="radio-custom" name="radio-group" type="radio" checked>
+                                <label for="radio-1" class="radio-custom-label">Deliver to door</label>
+                                <input id="radio-2" class="radio-custom" name="radio-group" type="radio">
+                                <label for="radio-2" class="radio-custom-label">Collect in-store</label>
+                            </div>
+
+                            <p class="text-primary">Location</p>
+                            <div class="selector-wrapper">
+                                <!-- region sources from https://va.ecitizen.gov.sg/CFP/CustomerPages/NEA_google/displayresult.aspx?MesId=1068932&Source=Google&url=va.ecitizen.gov.sg -->
+                                <select name="selector" id="selector" name="selector">
+                                <option value="" disabled selected hidden>Please select</option>
+                                <optgroup label="North">
+                                <option value="Admirality">Admirality</option>
+                                <option value="Kranji">Kranji</option>
+                                <option value="Woodlands">Woodlands</option>
+                                <option value="Sembawang">Sembawang</option>
+                                <option value="Yio Chu Kang">Yio Chu Kang</option>
+                                <option value="Seletar">Seletar</option>
+                                <option value="Sengkang">Sengkang</option>
+                                <optgroup label="South">
+                                <option value="Holland">Holland</option>
+                                <option value="Queenstown">Queenstown</option>
+                                <option value="Bukit Merah">Bukit Merah</option>
+                                <option value="Telok Blangah">Telok Blangah</option>
+                                <option value="Pasir Panjang">Pasir Panjang</option>
+                                <option value="Sentosa">Sentosa</option>
+                                <option value="Bukit Timah">Bukit Timah</option>
+                                <option value="Newton">Newton</option>
+                                <option value="Orchard">Orchard</option>
+                                <option value="City">City</option>
+                                <option value="Marina South">Marina South</option>
+                                <optgroup label="East">
+                                <option value="Serangoon">Serangoon</option>
+                                <option value="Punggol">Punggol</option>
+                                <option value="Hougang">Hougang</option>
+                                <option value="Tampines">Tampines</option>
+                                <option value="Pasir Ris">Pasir Ris</option>
+                                <option value="Loyang">Loyang</option>
+                                <option value="Simei">Simei</option>
+                                <option value="Kallang">Kallang</option>
+                                <option value="Katong">Katong</option>
+                                <option value="East Coast">East Coast</option>
+                                <option value="Macpherson">Macpherson</option>
+                                <option value="Bedok">Bedok</option>
+                                <option value="Pulau Ubin">Pulau Ubin</option>
+                                <option value="Pulau Tekong">Pulau Tekong</option>
+                                <optgroup label="West">
+                                <option value="Lim Chu Kang">Lim Chu Kang</option>
+                                <option value="Choa Chu Kang">Choa Chu Kang</option>
+                                <option value="Bukit Panjang">Bukit Panjang</option>
+                                <option value="Tuas">Tuas</option>
+                                <option value="Jurong East">Jurong East</option>
+                                <option value="Jurong West">Jurong West</option>
+                                <option value="Jurong Industrial Estate">Jurong Industrial Estate</option>
+                                <option value="Bukit Batok">Bukit Batok</option>
+                                <option value="Hillview">Hillview</option>
+                                <option value="West Coast">West Coast</option>
+                                <option value="Clementi">Clementi</option>
+                                <optgroup label="Central">
+                                <option value="Thomson">Thomson</option>
+                                <option value="Marymount">Marymount</option>
+                                <option value="Sin Ming">Sin Ming</option>
+                                <option value="Ang Mo Kio">Ang Mo Kio</option>
+                                <option value="Bishan">Bishan</option>
+                                <option value="Serangoon Gardens">Serangoon Gardens</option>
+                                <option value="MacRitchie">MacRitchie</option>
+                                <option value="Toa Payoh">Toa Payoh</option>
+                            </select>
+                            </div>
+
+                            <p class="text-primary">Street</p>
+                            <input type="text" placeholder="Please enter" id="street" name="street">
+
+                            <p class="text-primary">Floor</p>
+                            <input type="text" placeholder="Please enter" name="floor">
+
+                            <p class="text-primary">Postal code</p>
+                            <input type="text" placeholder="Please enter" name="postalCode">
+
+                            <input type="checkbox" id="terms" name="terms">
+                            <label for="terms">I agree to the Terms & Conditions</label><br><br>
+                            <div id="termsMessage" class="error">Please check this box if you want to proceed</div>
+
+                            <div class="add-to-cart">
+                                <input type="submit" value="Payment">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 order-lg-2 order-md-2 order-sm-1">
+                    <div class="payment">
+                        <!-- image source from www.unsplash.com -->
+                        <img class="img-responsive" src="images/product_detail_1.png" alt="product">
+                        <p class="text-primary">Chocolate cream cake</p>
+                        <p class="text-secondary">Size: 12cm</p>
+                        <p class="text-secondary">QTY: 1</p>
+                        <div class="total pt-sm-2">
+                            <p class="alignLeft">Total (Tax Incl.)</p>
+                            <h1 class="alignRight">$20.90</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="text-left text-lg-start" style="background-color: #303030;">
+        <div class="container-fluid p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-1 order-md-2 order-sm-2 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">About</h6>
+                    <hr class="line-primary">
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Our story</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="locations.html" class="text-white">Locations</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Privacy policy</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Terms and conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-2 order-md-3 order-sm-3 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">Support</h6>
+                    <hr class="line-primary">
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Contact us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">FAQs</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Delivery and return</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Track order</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 order-lg-3 order-md-4 order-sm-4 pt-4 pb-4">
+                    <h6 class="text-uppercase text-white small">Social media</h6>
+                    <hr class="line-primary"></hr>
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Instagram</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Twitter</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12 col-sm-12 order-lg-4 order-md-1 order-sm-1 pt-4 pb-4">
+                    <div class="newsletter">
+                        <input type="text" placeholder="Subscribe news here." name="newsletter">
+                        <div class="newsletter-icon">
+                            <button id="subscribeNews"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+</body>
+
+
+<script>
+    var searchButton = document.getElementById('searchbtn');
+    // show topnav when user clicks on searchbtn button //
+    searchButton.onclick = function() {
+        var div = document.getElementById('topnav');
+        if (div.style.display !== 'none') { // checks if it is hidden //
+            div.style.display = 'none'; // hides if it is not //
+        } else {
+            div.style.display = 'block'; // shows if it is hidden //
+        }
+    };
+
+    var cartButton = document.getElementById('cartbtn');
+    // show sidebar when user clicks on cartbtn button //
+    cartButton.onclick = function() {
+        var div = document.getElementById('sidebar');
+        if (div.style.display !== 'none') {
+            div.style.display = 'none';
+        } else {
+            div.style.display = 'flex';
+        }
+    };
+
+
+    var cartClosed = document.getElementById('cartClosed');
+    // hide sidebar when user clicks on cartClosed button //
+    cartClosed.onclick = function() {
+        var div = document.getElementById('sidebar');
+        div.style.display = 'none';
+    };
+
+
+    var confirmSubscribe = document.getElementById('subscribeNews');
+    // prompt confirm window to thank user after he or she clicks on subscribeNews button //
+    confirmSubscribe.onclick = function() {
+        var div = document.getElementById('newsletter');
+        alert("Thank you for your subscription!");
+    };
+
+    // function to checks if all form fields below have value when submitting, and if empty, error message appears //
+    function submitPayment() {
+        var name = document.getElementById("name");
+        var terms = document.getElementById("terms");
+        var email = document.getElementById("email");
+        var nameMessage = document.getElementById("nameMessage")
+        var termsMessage = document.getElementById("termsMessage")
+        var emailMessage = document.getElementById("emailMessage")
+
+        var nameValue = name.value; // accessing object properties with variables //
+        var emailValue = email.value; // accessing object properties with variables //
+        var termsValue = terms.checked; // accessing object properties with variables //
+
+        // checks input field for name has value when submitting, and if empty, error message appears //
+        if (nameValue.trim() === '') { // trim removes blank space, if it is equalivalent to empty value, it shows error style //
+            name.style.borderBottom = '2px solid red'
+            nameMessage.style.display = 'block'
+            return false // exit function //
+        } else {
+            name.style.borderBottom = '2px solid #ffa215' // shows default state //
+            nameMessage.style.display = 'none'
+        }
+
+        // checks input field for email has value when submitting, and if empty, error message appears //
+        if (emailValue.trim() === '') {
+            email.style.borderBottom = '2px solid red'
+            emailMessage.style.display = 'block'
+            return false
+        } else {
+            email.style.borderBottom = '2px solid #ffa215'
+            emailMessage.style.display = 'none'
+
+        }
+
+        // checks checkbox for terms has value when submitting, and if unchecked, error message appears //
+        if (termsValue === false) { // if value is not checked, error state appear //
+            terms.style.outline = '1px solid red'
+            termsMessage.style.display = 'block'
+            return false // exit function //
+        } else {
+            terms.style.outline = 'none' // shows default state //
+            termsMessage.style.display = 'none'
+        }
+
+    }
+</script>
+
+
+</html>

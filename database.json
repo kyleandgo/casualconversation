@@ -1,0 +1,41 @@
+[{
+        "name": "Chocolate cake",
+        "image": "images\/products_1.png",
+        "price": "$8.50",
+        "link": "chococake.html"
+
+    },
+    {
+        "name": "Raspberry shortcake",
+        "image": "images\/products_2.png",
+        "price": "$6.50",
+        "link": "chococake.html"
+
+    },
+    {
+        "name": "Cherry cupcake",
+        "image": "images\/products_3.png",
+        "price": "$6.50",
+        "link": "chococake.html"
+    },
+    {
+        "name": "Berry blue donut",
+        "image": "images\/products_4.png",
+        "price": "$7.50",
+        "link": "chococake.html"
+
+    },
+    {
+        "name": "Pink champagne macarons",
+        "image": "images\/products_5.png",
+        "price": "$4.50",
+        "link": "chococake.html"
+
+    },
+    {
+        "name": "Strawberry cream cupcake",
+        "image": "images\/products_6.png",
+        "price": "$8.50",
+        "link": "chococake.html"
+    }
+]
